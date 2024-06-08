@@ -1,10 +1,10 @@
-import Map from './components/Map'
-import Loader from './components/Loader'
-import Header from './components/Header'
-import { useState, useEffect } from 'react'
-
-function App() {
-
+import React, { useState, useEffect } from 'react'
+import CustomMap from './components/CustomMap'
+import {APIProvider} from '@vis.gl/react-google-maps'
+import Header from './components/Header';
+import Loader from './components/Loader';
+import "./App.css";
+const App = () => {
   const [eventData, setEventData] = useState([])
   const [loading, setLoading] = useState(false)
 
@@ -16,18 +16,19 @@ function App() {
 
       setEventData(events)
       setLoading(false)
+      
     }
-
     fetchEvents()
+    
   }, [])
-
   return (
-
-    <div>
+    <div className="app">
       <Header/>
-      { !loading ? <Map eventData={eventData}/> : <Loader/> }
+      <APIProvider apiKey={'AIzaSyAxwovdoW6xHzYcovvXu1-_-ulLdVJcIUY'}>
+        { !loading ? <CustomMap eventData={eventData}/> : <Loader/>}
+      </APIProvider>
     </div>
-  );
+  )
 }
 
-export default App;
+export default App
