@@ -4,6 +4,7 @@ import {APIProvider} from '@vis.gl/react-google-maps'
 import Header from './components/Header';
 import Loader from './components/Loader';
 import "./App.css";
+
 const App = () => {
   const [eventData, setEventData] = useState([])
   const [loading, setLoading] = useState(false)
@@ -24,7 +25,7 @@ const App = () => {
   return (
     <div className="app">
       <Header/>
-      <APIProvider apiKey={'AIzaSyAxwovdoW6xHzYcovvXu1-_-ulLdVJcIUY'}>
+      <APIProvider apiKey={ 'MY_API_KEY' }>
         { !loading ? <CustomMap eventData={eventData}/> : <Loader/>}
       </APIProvider>
     </div>
