@@ -26,7 +26,7 @@ const CustomMap = ({ eventData }) => {
                 style={{ borderRadius: "20px" }}
                 defaultZoom={8}
                 defaultCenter={{ lat: 37.3265, lng: -121.8756 }}
-                mapId='b7ab67342d112631'
+                mapId='MY-MAP-ID'
                 gestureHandling={"greedy"}
                 disableDefaultUI
             >
